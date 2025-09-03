@@ -1,0 +1,15 @@
+#myMenu {
+    width: 10vw;
+    height: 20vh;
+    display: flex;
+    align-items:center;
+
+}
+
+
+
+#myMenu ul  {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

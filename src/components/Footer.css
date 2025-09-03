@@ -1,0 +1,14 @@
+.app-footer {
+  background: #4CAF50;            /* verde prietenos */
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-top: 3px solid #388E3C;  /* linie discretă de separare */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  position: fixed;  /* fixat jos pe ecran */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+}

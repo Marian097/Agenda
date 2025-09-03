@@ -1,0 +1,46 @@
+/* Container tabel */
+.listGrup {
+  display: flex;
+  justify-content: center;
+  align-items:start; 
+  height: 50vh; 
+  width: 100vw;
+  background:#6e40031e;
+}
+
+/* Tabel general */
+.tableContacts {
+  width: 50%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* Header */
+.tableContacts thead {
+  background-color: #4caf50;
+  color: white;
+  text-align: left;
+}
+
+.tableContacts th,
+.tableContacts td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Rânduri */
+.tableContacts tbody tr:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+/* Alternanță rânduri */
+.tableContacts tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Ultima linie fără border */
+.tableContacts tbody tr:last-child td {
+  border-bottom: none;
+}
