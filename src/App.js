@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Menu from "./components/Menu.jsx";
 import Form from "./components/Form.jsx";
 import List from "./components/List.jsx";
@@ -7,7 +7,7 @@ import Footer from "./components/Footer.jsx";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <Header/>
       <Menu />
       <Routes>
@@ -15,6 +15,6 @@ export default function App() {
         <Route path="/contacts" element={<Form />} />
       </Routes>
       <Footer/>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
