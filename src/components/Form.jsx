@@ -8,51 +8,51 @@ const Form = () => {
   const [contacts, setContacts] = useState(() => {
     const saved = localStorage.getItem("contacts");
     return saved ? JSON.parse(saved) : [];
-  })
+  });
 
- 
   function handleSubmit(e) {
-        e.preventDefault();
-        if (phone.length === 10 && phone.startsWith("07")) {
-            setContacts(prev => [...prev, { id:crypto.randomUUID(), nume: name.trim(), telefon: phone.trim() }]);
-            alert("Contactul a fost adaugat cu succes.")
-        }
-        else {
-            setOutput("Numarul de telefon este invalid.");
-        }
-        setName("");
-        setPhone("");
+    e.preventDefault();
+    const exists = contacts.some(element => element.telefon === phone.trim())
+    if (phone.length === 10 && phone.startsWith("07") && !exists) {
+      setContacts((prev) => [
+        ...prev,
+        { id: crypto.randomUUID(), nume: name.trim(), telefon: phone.trim() },
+      ]);
+      alert("Contactul a fost adaugat cu succes.");
+    } else {
+      setOutput("Numarul de telefon este invalid.");
     }
+    setName("");
+    setPhone("");
+  }
 
-  
   useEffect(() => {
     console.log("contacts (actual):", contacts);
     localStorage.setItem("contacts", JSON.stringify(contacts));
-  },[contacts]);
+  }, [contacts]);
 
   return (
-    <div className = "formGrup">
-    <form id="form" onSubmit={handleSubmit}>
-      <label>Nume: </label>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-    
+    <div className="formGrup">
+      <form id="form" onSubmit={handleSubmit}>
+        <label>Nume: </label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
 
-      <label>Telefon:</label>
-      <input
-        type="tel"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-      />
-      <p>{output}</p>
+        <label>Telefon:</label>
+        <input
+          type="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+        <p>{output}</p>
 
-      <button className="bt-add" type="submit">
-        Adaugă
-      </button>
-    </form>
+        <button className="bt-add" type="submit">
+          Adaugă
+        </button>
+      </form>
     </div>
   );
 };

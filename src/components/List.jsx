@@ -13,7 +13,7 @@ const List = () => {
 
         else if (data === null)
         {
-            throw new Error ("Eroare la incarcarea din localStorage")
+            setList([]);
         }
     }, []);
     console.log(list)
@@ -23,7 +23,10 @@ const List = () => {
         const saved = JSON.parse(localStorage.getItem("contacts")) || [];
         const update = saved.filter(c => c.id !== id);
         localStorage.setItem("contacts", JSON.stringify(update))
+
     }
+
+    console.log(list)
 
 
   return (
