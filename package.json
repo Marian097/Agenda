@@ -1,6 +1,7 @@
 {
   "name": "agenda",
   "version": "0.1.0",
+  "homepage": "https://marian097.github.io/Agenda",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
